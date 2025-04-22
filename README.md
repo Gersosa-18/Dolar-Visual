@@ -1,20 +1,21 @@
 # Dólar Visual
 
-**Dólar Visual** es una aplicación para visualizar las cotizaciones actuales del dólar (oficial, blue, MEP, etc.) y verificar si están dentro de una banda crítica (por ejemplo, entre $1000 y $1400). Además, permite simular cómo habrían sido las inversiones en dólares, plazo fijo y Merval para tomar decisiones financieras informadas.
+**Dólar Visual** es una aplicación web para visualizar las cotizaciones actuales del dólar (oficial, blue, MEP, etc.) y verificar si están dentro de una banda crítica (por ejemplo, entre $1000 y $1400). Además, permite simular cómo habrían sido las inversiones en dólares, plazo fijo y Merval para tomar decisiones financieras informadas.
 
 ## 🚀 Funcionalidades
 
-- **Visualización de cotizaciones**: Obtén las cotizaciones actuales de diferentes tipos de dólares.
-- **Banda crítica**: Verifica si el valor del dólar está dentro de una banda crítica definida.
-- **Simulador de inversiones**: Simula qué inversión hubiera sido más rentable (dólares, plazo fijo, Merval).
+- **Visualización de cotizaciones**: Consulta en tiempo real de distintos tipos de dólar.
+- **Banda crítica**: Indicación visual de si la cotización está dentro de un rango de alerta.
+- **Simulador de inversiones**: Simula el rendimiento comparado entre dólar, plazo fijo y Merval.
 
 ## ⚙️ Tecnologías utilizadas
 
 - **Python**: Lenguaje principal.
-- **Streamlit**: Framework para crear el dashboard.
-- **Requests**: Para hacer peticiones a las APIs.
-- **Pandas**: Para manipular datos y realizar cálculos.
-- **Matplotlib/Plotly**: Para la visualización de gráficos.
+- **FastAPI**: Framework web backend.
+- **Jinja2**: Renderizado de plantillas HTML.
+- **Requests**: Para consumir APIs externas.
+- **Pandas**: Procesamiento y análisis de datos.
+- **HTML + CSS**: Interfaz web básica.
 
 ## 💻 Cómo ejecutar
 
@@ -22,3 +23,4 @@
 
    ```bash
    git clone https://github.com/Gersosa-18/Dolar-Visual.git
+   cd Dolar-Visual
