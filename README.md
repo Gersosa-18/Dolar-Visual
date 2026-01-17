@@ -1,26 +1,38 @@
 # Dólar Visual
 
-**Dólar Visual** es una aplicación web para visualizar las cotizaciones actuales del dólar (oficial, blue, MEP, etc.) y verificar si están dentro de una banda crítica (por ejemplo, entre $1000 y $1400). Además, permite simular cómo habrían sido las inversiones en dólares, plazo fijo y Merval para tomar decisiones financieras informadas.
+Aplicación web y API construida con **FastAPI**, desplegada en producción usando **FastAPI Cloud**, que muestra las cotizaciones actuales del dólar en Argentina (oficial, blue, MEP, CCL, etc.) consumiendo datos en tiempo real.
 
-## 🚀 Funcionalidades
+🌐 **Live demo**: https://dolar-visual-b3459320.fastapicloud.dev/
 
-- **Visualización de cotizaciones**: Consulta en tiempo real de distintos tipos de dólar.
-- **Banda crítica**: Indicación visual de si la cotización está dentro de un rango de alerta.
-- **Simulador de inversiones**: Simula el rendimiento comparado entre dólar, plazo fijo y Merval.
+---
 
-## ⚙️ Tecnologías utilizadas
+## 🚀 Qué hace
+- Obtiene cotizaciones actualizadas desde una API externa
+- Renderiza interfaz web con Jinja2
+- Expone endpoint REST (`/api/dolar`) para consumo externo
+- Incluye healthcheck para producción
 
-- **Python**: Lenguaje principal.
-- **FastAPI**: Framework web backend.
-- **Jinja2**: Renderizado de plantillas HTML.
-- **Requests**: Para consumir APIs externas.
-- **Pandas**: Procesamiento y análisis de datos.
-- **HTML + CSS**: Interfaz web básica.
+---
 
-## 💻 Cómo ejecutar
+## 🧱 Stack
+- Python + FastAPI
+- Jinja2 + CSS vanilla
+- API: https://dolarapi.com
+- Deploy: FastAPI Cloud
 
-1. **Clonar el repositorio**:
+---
 
-   ```bash
-   git clone https://github.com/Gersosa-18/Dolar-Visual.git
-   cd Dolar-Visual
+## 🔌 Endpoints
+- `GET /` → Interfaz web
+- `GET /api/dolar` → JSON con cotizaciones
+- `GET /health` → Healthcheck
+
+---
+
+## ▶️ Ejecutar localmente
+```bash
+pip install fastapi uvicorn requests jinja2
+uvicorn main:app --reload
+```
+
+Acceder en `http://localhost:8000`
