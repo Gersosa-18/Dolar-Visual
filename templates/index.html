@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizaciones del Dólar</title>
+    <link rel="stylesheet" href="{{ request.url_for('static', path='css/estilos.css') }}?v=1">
+
+
+</head>
+<body>
+  <h1>💵 Cotizaciones del Dólar en Argentina</h1>
+
+  <div class="cotizaciones-container">
+    <div class="primarias">
+      <h2>Principales</h2>
+      <div class="separador">
+      {% for cotizacion in cotizaciones %}
+          {% if cotizacion.nombre in ["Oficial", "Blue"] %}
+          <div class="cotizacion cotizaciones_p">
+              <strong>{{ cotizacion.nombre }}</strong>
+              <span>Compra: ${{ cotizacion.compra }}</span>
+              <span>Venta: ${{ cotizacion.venta }}</span>
+              <small>{{ cotizacion.fecha_actualizacion }}</small>
+          </div>
+          {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+    
+    <div class="secundarias">
+      <h2>Secundarias</h2>
+      {% for cotizacion in cotizaciones %}
+          {% if cotizacion.nombre not in ["Oficial", "Blue"] %}
+          <div class="cotizacion">
+            <strong>{{ cotizacion.nombre }}</strong>
+            <div class="detalle">
+              <span>Compra: ${{ cotizacion.compra }}</span>
+              <span>Venta: ${{ cotizacion.venta }}</span>
+              <span>{{ cotizacion.fecha_actualizacion }}</span>
+            </div>
+          </div>          
+          {% endif %}
+      {% endfor %}
+    </div>
+    
+  </div>
+  
+  <footer>
+    <p class="autor">
+      Desarrollado por 
+      <a href="https://github.com/Gersosa-18" target="_blank">
+        <img src="{{ url_for('static', path='img/github-icon.svg') }}" alt="GitHub" class="icono">
+        Gersosa-18
+      </a>
+    </p>
+    
+  </footer>
+  
+</body>
+</html>
