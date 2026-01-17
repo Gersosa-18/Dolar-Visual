@@ -14,3 +14,11 @@ templates = Jinja2Templates(directory="templates")
 async def index(request: Request):
     cotizaciones = obtener_cotizaciones()
     return templates.TemplateResponse("index.html", {"request": request, "cotizaciones": cotizaciones})
+
+@app.get("/api/dolar")
+def dolar_json():
+    return obtener_cotizaciones()
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}

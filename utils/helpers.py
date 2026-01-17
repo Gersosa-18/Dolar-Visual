@@ -1,7 +1,8 @@
-import arrow
+from datetime import datetime
 
 def formatear_fecha(fecha_str):
     try:
-        fecha_obj = arrow.get(fecha_str)
-        return fecha_obj.format("DD/MM/YYYY HH:mm")
-    except Exception:return "Fecha inválida"
+        fecha_obj = datetime.fromisoformat(fecha_str.replace('Z', '+00:00'))
+        return fecha_obj.strftime("%d/%m/%Y %H:%M")
+    except Exception:
+        return "Fecha inválida"
